@@ -85,5 +85,3 @@ if __name__ == "__main__":
         ]
     )
     print(response.choices[0].message.content)
-    print(detect_object_counts(image_path))
-    print(generate_room_report(image_base64))
