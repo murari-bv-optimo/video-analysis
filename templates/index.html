@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Room Analyzer - AI-Powered Room Analysis</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🏠 Room Analyzer</h1>
+            <p>AI-Powered Room Analysis with GPT-4 Vision</p>
+        </header>
+
+        <main>
+            <!-- Upload Section -->
+            <section id="upload-section" class="section">
+                <h2>📸 Upload Room Images</h2>
+                <div class="upload-area" id="upload-area">
+                    <div class="upload-content">
+                        <div class="upload-icon">📁</div>
+                        <p>Drag and drop images here or click to select</p>
+                        <input type="file" id="file-input" multiple accept="image/*" style="display: none;">
+                        <button class="btn-primary" onclick="document.getElementById('file-input').click()">
+                            Select Images
+                        </button>
+                    </div>
+                </div>
+                
+                <div id="file-preview" class="file-preview"></div>
+                
+                <button id="analyze-btn" class="btn-primary analyze-btn" disabled>
+                    🔍 Start Analysis
+                </button>
+            </section>
+
+            <!-- Progress Section -->
+            <section id="progress-section" class="section" style="display: none;">
+                <h2>⏳ Processing Images</h2>
+                <div class="progress-container">
+                    <div class="progress-bar">
+                        <div id="progress-fill" class="progress-fill"></div>
+                    </div>
+                    <p id="progress-text">Initializing analysis...</p>
+                </div>
+                <div id="processing-logs" class="processing-logs"></div>
+            </section>
+
+            <!-- Results Section -->
+            <section id="results-section" class="section" style="display: none;">
+                <h2>📊 Analysis Results</h2>
+                
+                <div class="results-header">
+                    <div class="result-card">
+                        <h3>🏠 House Summary</h3>
+                        <div id="house-summary" class="summary-content"></div>
+                    </div>
+                    
+                    <div class="result-actions">
+                        <button id="download-btn" class="btn-secondary">
+                            💾 Download Report
+                        </button>
+                        <button id="new-analysis-btn" class="btn-primary">
+                            🔄 New Analysis
+                        </button>
+                    </div>
+                </div>
+
+                <div class="rooms-container">
+                    <h3>🚪 Room Details</h3>
+                    <div id="rooms-list" class="rooms-list"></div>
+                </div>
+
+                <div class="json-viewer">
+                    <h3>📄 Full JSON Report</h3>
+                    <button class="toggle-json btn-secondary">Show/Hide JSON</button>
+                    <pre id="json-content" class="json-content" style="display: none;"></pre>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2024 Room Analyzer - Powered by OpenAI GPT-4 Vision</p>
+        </footer>
+    </div>
+
+    <script src="/static/js/script.js"></script>
+</body>
+</html>
